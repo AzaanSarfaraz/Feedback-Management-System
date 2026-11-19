@@ -1,0 +1,259 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<link rel="stylesheet" href="~/css/Home.css" asp-append-version="true" />
+
+<div class="hm">
+
+    <!-- HERO -->
+    <div class="hm-wrap">
+        <section class="hm-hero">
+            <span class="hm-badge"><i class="bi bi-stars"></i> LEARN TODAY. LEAD TOMORROW.</span>
+
+            <h1>Build Your Future<br />With <em>Technology.</em></h1>
+
+            <p>
+                Turn your passion for technology into real-world skills.
+                Learn programming, web development, cybersecurity and
+                data science with practical, career-focused training.
+            </p>
+
+            <div class="hm-actions">
+                <a href="#courses" class="hm-btn hm-btn-solid">
+                    <span>Explore Courses</span><i class="bi bi-arrow-right"></i>
+                </a>
+                <a asp-controller="Student" asp-action="Register" class="hm-btn hm-btn-ghost">
+                    <i class="bi bi-people"></i><span>Quick Login / Signup</span>
+                </a>
+            </div>
+
+            <div class="hm-orb hm-orb-1"></div>
+            <div class="hm-orb hm-orb-2"></div>
+        </section>
+    </div>
+
+    <!-- COURSES -->
+    <section class="hm-section" id="courses">
+        <div class="hm-wrap">
+
+            <div class="hm-head hm-reveal">
+                <span class="hm-tag">What You Can Learn</span>
+                <h2>Explore Our Featured Courses</h2>
+                <p>
+                    Develop in-demand IT skills with practical learning
+                    designed to help you grow, create and succeed in the
+                    digital world.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-sm-6 col-lg-3 hm-reveal">
+                    <div class="hm-card hm-course">
+                        <span class="hm-num">01</span>
+                        <div class="hm-icon"><i class="bi bi-code-slash"></i></div>
+                        <h3>Web Development</h3>
+                        <p>
+                            Learn to build modern, responsive websites and
+                            web applications using industry-relevant technologies.
+                        </p>
+                        <a href="#feedback" class="hm-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 hm-reveal">
+                    <div class="hm-card hm-course">
+                        <span class="hm-num">02</span>
+                        <div class="hm-icon"><i class="bi bi-phone"></i></div>
+                        <h3>Android Development</h3>
+                        <p>
+                            Discover mobile app development and learn how
+                            to create useful, engaging applications for smartphones.
+                        </p>
+                        <a href="#feedback" class="hm-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 hm-reveal">
+                    <div class="hm-card hm-course">
+                        <span class="hm-num">03</span>
+                        <div class="hm-icon"><i class="bi bi-shield-lock"></i></div>
+                        <h3>Cyber Security</h3>
+                        <p>
+                            Understand digital security, network protection and
+                            the fundamentals of defending systems against cyber threats.
+                        </p>
+                        <a href="#feedback" class="hm-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 hm-reveal">
+                    <div class="hm-card hm-course">
+                        <span class="hm-num">04</span>
+                        <div class="hm-icon"><i class="bi bi-bar-chart-line"></i></div>
+                        <h3>Data Science</h3>
+                        <p>
+                            Explore data analysis, visualization, statistics and
+                            the foundations of data-driven decision-making.
+                        </p>
+                        <a href="#feedback" class="hm-link">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FEEDBACK BANNER -->
+    <section class="hm-section hm-section-tight" id="feedback">
+        <div class="hm-wrap">
+            <div class="hm-banner hm-reveal">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <span class="hm-badge">✦ YOUR VOICE MATTERS</span>
+                        <h2>Help Us Make Learning Better</h2>
+                        <p>
+                            Your feedback helps us improve our courses,
+                            teaching methods and learning experience.
+                            Share your thoughts and help us build a better
+                            learning community.
+                        </p>
+
+                        <a asp-controller="Pages" asp-action="Feedback" class="hm-btn hm-btn-light">
+                            <span>Share Your Feedback</span><i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 text-lg-end d-none d-lg-block">
+                        <i class="bi bi-chat-square-heart hm-banner-icon"></i>
+                    </div>
+                </div>
+                <div class="hm-orb hm-orb-1"></div>
+                <div class="hm-orb hm-orb-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEACHERS -->
+    <section class="hm-section" id="teachers">
+        <div class="hm-wrap">
+
+            <div class="hm-head hm-reveal">
+                <span class="hm-tag">Meet The Experts</span>
+                <h2>Learn From Our Teachers</h2>
+                <p>
+                    Learn from dedicated technology educators who help
+                    students develop their knowledge, confidence and
+                    practical skills.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-6 col-lg-3 hm-reveal">
+                    <div class="hm-card hm-teacher">
+                        <div class="hm-photo">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&h=700&q=85"
+                                 alt="Web development instructor" loading="lazy" />
+                        </div>
+                        <div class="hm-teacher-info">
+                            <h3>Ahmed Khan</h3>
+                            <span>Web Development Instructor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3 hm-reveal">
+                    <div class="hm-card hm-teacher">
+                        <div class="hm-photo">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&h=700&q=85"
+                                 alt="Mobile app development instructor" loading="lazy" />
+                        </div>
+                        <div class="hm-teacher-info">
+                            <h3>Sarah Ahmed</h3>
+                            <span>Mobile App Instructor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3 hm-reveal">
+                    <div class="hm-card hm-teacher">
+                        <div class="hm-photo">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&h=700&q=85"
+                                 alt="Cybersecurity instructor" loading="lazy" />
+                        </div>
+                        <div class="hm-teacher-info">
+                            <h3>Usman Ali</h3>
+                            <span>Cyber Security Instructor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-3 hm-reveal">
+                    <div class="hm-card hm-teacher">
+                        <div class="hm-photo">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&h=700&q=85"
+                                 alt="Data science instructor" loading="lazy" />
+                        </div>
+                        <div class="hm-teacher-info">
+                            <h3>Ayesha Malik</h3>
+                            <span>Data Science Instructor</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="hm-section" id="about">
+        <div class="hm-wrap">
+
+            <div class="hm-head hm-reveal">
+                <span class="hm-tag">Discover Our World</span>
+                <h2>Learn. Create. Innovate.</h2>
+                <p>
+                    Explore the exciting world of computer science and
+                    discover how technology can transform ideas into reality.
+                </p>
+            </div>
+
+            <div class="hm-card hm-video hm-reveal">
+                <iframe src="https://www.youtube-nocookie.com/embed/8mAITcNt710"
+                        title="Introduction to Computer Science - Harvard CS50"
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<script>
+    (function () {
+        var root = document.querySelector(".hm");
+        var items = document.querySelectorAll(".hm .hm-reveal");
+        if (!root) return;
+
+        if (!("IntersectionObserver" in window)) return; // content stays visible
+
+        root.classList.add("hm-js");
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        items.forEach(function (el) { observer.observe(el); });
+    })();
+</script>

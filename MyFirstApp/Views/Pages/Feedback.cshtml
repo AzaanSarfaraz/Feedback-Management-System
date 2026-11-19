@@ -1,0 +1,226 @@
+﻿@{
+    ViewData["Title"] = "Student Feedback";
+}
+
+<link rel="stylesheet" href="~/css/Feedback.css" asp-append-version="true" />
+
+<div class="feedback-container">
+
+    <div class="feedback-header">
+        <span class="badge-tag">✦ STUDENT EXPERIENCE</span>
+        <h1>Student <em>Feedback</em> Form</h1>
+        <p>
+            Your feedback helps us improve teaching quality
+            and create a better learning environment.
+        </p>
+        <div class="header-orb orb-1"></div>
+        <div class="header-orb orb-2"></div>
+    </div>
+
+    <form method="post" asp-controller="Feedback" asp-action="Submit">
+
+        @Html.AntiForgeryToken()
+
+        <!-- 01 -->
+        <div class="feedback-card">
+            <div class="card-title">
+                <span class="card-num">01</span>
+                <h4>Student Information</h4>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Month</label>
+                    <input type="text" name="Month"
+                           class="form-control"
+                           placeholder="e.g. October 2026" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Subject</label>
+                    <input type="text" name="Subject"
+                           class="form-control"
+                           placeholder="Enter subject" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Faculty &amp; Batch</label>
+                    <input type="text" name="FacultyBatch"
+                           class="form-control"
+                           placeholder="Faculty name and batch" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Student Name &amp; ID</label>
+                    <input type="text" name="StudentNameId"
+                           class="form-control"
+                           placeholder="Name and student ID" required />
+                </div>
+            </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="feedback-card">
+            <div class="card-title">
+                <span class="card-num">02</span>
+                <h4>Faculty &amp; Learning Experience</h4>
+            </div>
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                    <div class="question">
+                        <h6><b>1</b> Punctuality <small>Do classes start and end on time?</small></h6>
+                        <div class="options">
+                            @foreach (var x in new[] { "Every Class", "Most of the Classes", "Rarely", "Never" })
+                            {
+                                <label class="option">
+                                    <input class="form-check-input" type="radio" name="Punctuality" value="@x" required />
+                                    <span>@x</span>
+                                </label>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="question">
+                        <h6><b>2</b> Course Coverage <small>Has the faculty covered all topics?</small></h6>
+                        <div class="options">
+                            <label class="option">
+                                <input class="form-check-input" type="radio" name="CourseCoverage" value="Yes" required />
+                                <span>Yes, all topics covered</span>
+                            </label>
+                            <label class="option">
+                                <input class="form-check-input" type="radio" name="CourseCoverage" value="No" />
+                                <span>No, some topics are missing</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="question">
+                        <h6><b>3</b> Technical Support <small>Does faculty guide you during lab exercises?</small></h6>
+                        <div class="options">
+                            @foreach (var x in new[] { "Excellent", "Good", "Average", "Fair" })
+                            {
+                                <label class="option">
+                                    <input class="form-check-input" type="radio" name="TechnicalSupport" value="@x" required />
+                                    <span>@x</span>
+                                </label>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="question">
+                        <h6><b>4</b> Clearing Doubts <small>Are concepts explained clearly?</small></h6>
+                        <div class="options">
+                            @foreach (var x in new[] { "Excellent", "Good", "Average", "Fair" })
+                            {
+                                <label class="option">
+                                    <input class="form-check-input" type="radio" name="FacultyClarity" value="@x" required />
+                                    <span>@x</span>
+                                </label>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="question">
+                        <h6><b>5</b> Exams &amp; Assignments <small>Are exams held monthly with timely feedback?</small></h6>
+                        <div class="options">
+                            @foreach (var x in new[] { "Yes", "No" })
+                            {
+                                <label class="option">
+                                    <input class="form-check-input" type="radio" name="ExamsAssignments" value="@x" required />
+                                    <span>@x</span>
+                                </label>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="question">
+                        <h6><b>6</b> Book Utilization <small>Are books utilized during class?</small></h6>
+                        <div class="options">
+                            @foreach (var x in new[] { "Every Class", "Most of the Classes", "Rarely", "Never" })
+                            {
+                                <label class="option">
+                                    <input class="form-check-input" type="radio" name="BookUtilization" value="@x" required />
+                                    <span>@x</span>
+                                </label>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="question">
+                        <h6><b>7</b> Student Appraisal <small>Are reports delivered monthly to you or your guardian?</small></h6>
+                        <div class="options">
+                            @foreach (var x in new[] { "Yes", "No" })
+                            {
+                                <label class="option">
+                                    <input class="form-check-input" type="radio" name="AppraisalReport" value="@x" required />
+                                    <span>@x</span>
+                                </label>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="question">
+                        <h6><b>8</b> Computer Uptime <small>Are computer issues resolved within a reasonable time?</small></h6>
+                        <div class="options">
+                            @foreach (var x in new[] {
+                                                        "No Issues in Computer System/Software",
+                                                        "Issues reported & resolved in reasonable time",
+                                                        "Issue resolution is delayed",
+                                                        "Not resolved"
+                                                        })
+                            {
+                                <label class="option">
+                                    <input class="form-check-input" type="radio" name="ComputerUptime" value="@x" required />
+                                    <span>@x</span>
+                                </label>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="feedback-card">
+            <div class="card-title">
+                <span class="card-num">03</span>
+                <h4>Your Valuable Remarks</h4>
+            </div>
+            <label class="form-label">Suggestions for improvement</label>
+            <textarea class="form-control" name="Remarks" rows="5"
+                      placeholder="Share your suggestions and ideas..."></textarea>
+        </div>
+
+        <!-- Submit -->
+        <div class="feedback-card submit-card">
+            <div>
+                <strong>Thank you for your feedback!</strong>
+                <div class="submit-sub">
+                    Together, we can create a better learning experience.
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">
+                <span>Submit Feedback</span>
+                <i>→</i>
+            </button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,118 @@
+﻿@{
+    var action = ViewContext.RouteData.Values["action"]?.ToString() ?? "";
+    bool Is(string name) => string.Equals(action, name, StringComparison.OrdinalIgnoreCase);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyFirstApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MyFirstApp.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/_Layout.cshtml.css" asp-append-version="true" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="nv-header">
+        <nav class="navbar navbar-expand-lg nv">
+            <div class="container nv-inner">
+
+                <a class="nv-brand" asp-action="Index" asp-controller="Pages">
+                    <span class="nv-logo"><i class="bi bi-mortarboard-fill"></i></span>
+                    <b>Project-ASP.NET</b>
+                </a>
+
+
+                <div class="collapse navbar-collapse nv-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 nv-links">
+                        <li class="nav-item">
+                            <a class="nv-link @(Is("Index") ? "active" : "")"
+                               asp-controller="Pages" asp-action="Index">
+                                <i class="bi bi-house-door"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nv-link @(Is("Contact") ? "active" : "")"
+                               asp-controller="Pages" asp-action="Contact">
+                                <i class="bi bi-envelope"></i> Contact
+                            </a>
+                        </li>
+                        @* <li class="nav-item">
+                            <a class="nv-link @(Is("Register") ? "active" : "")"
+                               asp-controller="Student" asp-action="Register">
+                                <i class="bi bi-envelope"></i> Register
+                            </a>
+                        </li> *@
+                    </ul>
+
+                    <a class="nv-cta" asp-controller="Pages" asp-action="Feedback">
+                        <span>Get Feedback Form</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid p-0">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="ft">
+        <div class="ft-orb ft-orb-1"></div>
+        <div class="ft-orb ft-orb-2"></div>
+
+        <div class="container ft-inner">
+            <div class="row g-4 ft-top">
+
+                <div class="col-lg-5">
+                    <a class="ft-brand" href="#">
+                        <span class="nv-logo"><i class="bi bi-mortarboard-fill"></i></span>
+                        <b>Project-ASP.NET</b>
+                    </a>
+                    <p class="ft-text">
+                        Turn your passion for technology into real-world skills
+                        with practical, career-focused learning.
+                    </p>
+                </div>
+
+                <div class="col-6 col-lg-3 offset-lg-1">
+                    <h6 class="ft-title">Quick Links</h6>
+                    <ul class="ft-list">
+                        <li><a asp-controller="Pages" asp-action="Index"><i class="bi bi-chevron-right"></i> Home</a></li>
+                        <li><a asp-controller="Pages" asp-action="Contact"><i class="bi bi-chevron-right"></i> Contact</a></li>
+                        <li><a asp-controller="Pages" asp-action="Feedback"><i class="bi bi-chevron-right"></i> Feedback</a></li>
+                        <li><a asp-controller="Student" asp-action="Register"><i class="bi bi-chevron-right"></i> Register</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                    <h6 class="ft-title">Your Voice Matters</h6>
+                    <p class="ft-text ft-small">Help us improve your learning experience.</p>
+                    <a class="ft-btn" asp-controller="Pages" asp-action="Feedback">
+                        <span>Share Feedback</span> <i class="bi bi-arrow-up-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="ft-bottom">
+                <span>&copy; @DateTime.Now.Year - MyFirstApp</span>
+                <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,408 @@
+﻿.rg {
+    --g-900: #0b3d2a;
+    --g-800: #11593d;
+    --g-700: #167a52;
+    --g-600: #1a9d68;
+    --g-500: #22c07f;
+    --g-200: #c9f0dd;
+    --g-100: #e6f8ef;
+    --g-50: #f4fcf8;
+    --ink: #17332a;
+    --muted: #6b8479;
+    --white: #ffffff;
+    --radius: 20px;
+    --shadow: 0 10px 30px rgba(17, 89, 61, .08);
+    --shadow-lg: 0 18px 45px rgba(17, 89, 61, .16);
+    color: var(--ink);
+    overflow: hidden;
+    padding: 30px 0 40px;
+    background: radial-gradient(circle at 10% 0%, var(--g-100) 0, transparent 40%), radial-gradient(circle at 90% 25%, var(--g-200) 0, transparent 35%), var(--g-50);
+}
+
+    .rg * {
+        box-sizing: border-box;
+    }
+
+.rg-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ---------- Animations ---------- */
+@keyframes rgFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(26px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rgFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(18px, -22px) scale(1.08);
+    }
+}
+
+@keyframes rgGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes rgShine {
+    from {
+        left: -80%;
+    }
+
+    to {
+        left: 130%;
+    }
+}
+
+/* ---------- Hero ---------- */
+.rg-hero {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: var(--white);
+    padding: 56px 28px 52px;
+    margin-bottom: 28px;
+    border-radius: 28px;
+    background: linear-gradient(120deg, var(--g-900), var(--g-700), var(--g-500), var(--g-800));
+    background-size: 300% 300%;
+    animation: rgGradient 12s ease infinite, rgFadeUp .8s ease both;
+    box-shadow: var(--shadow-lg);
+}
+
+.rg-badge {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .75rem;
+    letter-spacing: .22em;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, .16);
+    border: 1px solid rgba(255, 255, 255, .35);
+    backdrop-filter: blur(6px);
+}
+
+.rg-hero h1 {
+    position: relative;
+    z-index: 2;
+    margin: 18px 0 12px;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -.5px;
+}
+
+    .rg-hero h1 em {
+        position: relative;
+        display: inline-block;
+        font-style: normal;
+        color: #d6ffe9;
+    }
+
+        .rg-hero h1 em::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 4px;
+            height: 8px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, .25);
+            z-index: -1;
+        }
+
+.rg-hero p {
+    position: relative;
+    z-index: 2;
+    max-width: 540px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    opacity: .93;
+}
+
+.rg-orb {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .13);
+    animation: rgFloat 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.rg-orb-1 {
+    width: 220px;
+    height: 220px;
+    top: -80px;
+    left: -60px;
+}
+
+.rg-orb-2 {
+    width: 160px;
+    height: 160px;
+    bottom: -60px;
+    right: -30px;
+    animation-delay: -4s;
+}
+
+/* ---------- Success alert ---------- */
+.rg-alert {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    margin-bottom: 24px;
+    border-radius: 18px;
+    font-weight: 600;
+    color: var(--g-900);
+    background: var(--g-100);
+    border: 2px solid var(--g-500);
+    animation: rgFadeUp .6s ease both;
+}
+
+    .rg-alert i {
+        font-size: 1.5rem;
+        color: var(--g-600);
+    }
+
+/* ---------- Cards ---------- */
+.rg-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 30px;
+    margin-bottom: 24px;
+    border: 1px solid var(--g-100);
+    box-shadow: var(--shadow);
+    animation: rgFadeUp .8s ease both;
+    transition: box-shadow .3s ease;
+}
+
+    .rg-card:hover {
+        box-shadow: var(--shadow-lg);
+    }
+
+form > .rg-card:nth-of-type(1) {
+    animation-delay: .1s;
+}
+
+form > .rg-card:nth-of-type(2) {
+    animation-delay: .2s;
+}
+
+.rg-card-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.rg-num {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    font-weight: 700;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--g-600), var(--g-800));
+    box-shadow: 0 6px 14px rgba(26, 157, 104, .35);
+}
+
+.rg-card-title h4 {
+    margin: 0;
+    font-weight: 700;
+    color: var(--g-900);
+}
+
+/* ---------- Fields ---------- */
+.rg .form-label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: .88rem;
+    color: var(--g-800);
+}
+
+.rg-field {
+    position: relative;
+}
+
+    .rg-field > i {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        font-size: 1.05rem;
+        color: var(--g-600);
+        pointer-events: none;
+    }
+
+.rg .form-control,
+.rg .form-select {
+    min-height: 0;
+    padding: 13px 16px 13px 46px;
+    font-size: .95rem;
+    color: var(--ink);
+    background-color: var(--g-50);
+    border: 2px solid var(--g-100);
+    border-radius: 14px;
+    transition: border-color .25s ease, box-shadow .25s ease, background-color .25s ease;
+}
+
+    .rg .form-control::placeholder {
+        color: #9bb3a8;
+    }
+
+    .rg .form-control:focus,
+    .rg .form-select:focus {
+        background-color: var(--white);
+        border-color: var(--g-500);
+        box-shadow: 0 0 0 5px rgba(34, 192, 127, .16);
+    }
+
+.rg-error {
+    display: block;
+    margin-top: 6px;
+    font-size: .82rem;
+    font-weight: 500;
+    color: #c0392b;
+}
+
+/* ---------- Submit ---------- */
+.rg-submit-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    background: linear-gradient(135deg, var(--white), var(--g-100));
+}
+
+    .rg-submit-card strong {
+        font-size: 1.1rem;
+        color: var(--g-800);
+    }
+
+.rg-sub {
+    margin-top: 4px;
+    font-size: .88rem;
+    color: var(--muted);
+}
+
+.rg-submit {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 36px;
+    border: 0;
+    border-radius: 50px;
+    font-family: inherit;
+    font-weight: 700;
+    letter-spacing: .3px;
+    color: var(--white);
+    cursor: pointer;
+    background: linear-gradient(120deg, var(--g-800), var(--g-500));
+    background-size: 200% 200%;
+    box-shadow: 0 12px 26px rgba(26, 157, 104, .38);
+    transition: box-shadow .3s ease, background-position .5s ease;
+}
+
+    .rg-submit i {
+        transition: transform .3s ease;
+    }
+
+    .rg-submit::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -80%;
+        width: 50%;
+        height: 100%;
+        transform: skewX(-25deg);
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .45), transparent);
+    }
+
+    .rg-submit:hover {
+        background-position: 100% 0;
+        box-shadow: 0 18px 34px rgba(26, 157, 104, .45);
+    }
+
+        .rg-submit:hover::after {
+            animation: rgShine .8s ease;
+        }
+
+        .rg-submit:hover i {
+            transform: translateX(6px);
+        }
+
+    .rg-submit:active {
+        transform: scale(.98);
+    }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 576px) {
+    .rg-hero {
+        padding: 40px 20px;
+        border-radius: 22px;
+    }
+
+    .rg-card {
+        padding: 22px 18px;
+    }
+
+    .rg-submit {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rg *, .rg *::before, .rg *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ---------- Login: register link ---------- */
+.rg-alt {
+    margin: 4px 0 0;
+    text-align: center;
+    font-size: .95rem;
+    color: var(--muted);
+}
+
+    .rg-alt a {
+        font-weight: 700;
+        color: var(--g-700);
+        text-decoration: none;
+        transition: color .25s ease;
+    }
+
+        .rg-alt a:hover {
+            color: var(--g-500);
+            text-decoration: underline;
+        }

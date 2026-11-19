@@ -1,0 +1,69 @@
+﻿@model MyFirstApp.Models.Student
+
+<link rel="stylesheet" href="~/css/Register.css" asp-append-version="true" />
+
+<div class="rg">
+    <div class="rg-wrap">
+
+        <header class="rg-hero">
+            <span class="rg-badge"><i class="bi bi-box-arrow-in-right"></i> WELCOME BACK</span>
+            <h1>Student <em>Login</em></h1>
+            <p>
+                Sign in with your student ID and email
+                to continue your learning journey.
+            </p>
+            <div class="rg-orb rg-orb-1"></div>
+            <div class="rg-orb rg-orb-2"></div>
+        </header>
+
+        <form method="post">
+
+            <div class="rg-card">
+                <div class="rg-card-title">
+                    <span class="rg-num">01</span>
+                    <h4>Login Details</h4>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="StudentId" class="form-label">Student ID</label>
+                        <div class="rg-field">
+                            <i class="bi bi-credit-card-2-front"></i>
+                            <input type="text" id="StudentId" name="StudentId"
+                                   class="form-control"
+                                   placeholder="e.g. STU-2026-001" required />
+                            <span asp-validation-for="StudentId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email Address</label>
+                        <div class="rg-field">
+                            <i class="bi bi-envelope"></i>
+                            <input type="email" id="email" name="Email"
+                                   class="form-control"
+                                   placeholder="you@example.com" required />
+                            <span asp-validation-for="email" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rg-card rg-submit-card">
+                <div>
+                    <strong>Dont Have an account</strong>
+                    <div class="rg-alt">Click Here To Register, <a asp-controller="Student" asp-action="Register">Register</a>
+                </div>
+                </div>
+
+
+                <button type="submit" name="submit" class="rg-submit">
+                    <span>Login</span>
+                    <i class="bi bi-arrow-right"></i>
+                </button>
+            </div>
+
+
+        </form>
+    </div>
+</div>
